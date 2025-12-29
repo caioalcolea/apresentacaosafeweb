@@ -1,6 +1,7 @@
 version: "3.7"
 
 services:
+## --------------------------- SAFEWEB PRESENTATION --------------------------- ##
   safeweb-presentation:
     image: safeweb-presentation:latest
     working_dir: /app
@@ -9,11 +10,10 @@ services:
       - talkhub
 
     environment:
-      - NODE_ENV=production
       - PORT=3090
       - HOST=0.0.0.0
+      - NODE_ENV=production
       - TZ=America/Sao_Paulo
-      - CORS_ORIGINS=https://safeweb.talkhub.me,http://localhost:3090
 
     deploy:
       mode: replicated
@@ -21,44 +21,21 @@ services:
       placement:
         constraints:
           - node.role == manager
-
       resources:
         limits:
           cpus: "0.5"
           memory: 256M
-        reservations:
-          cpus: "0.1"
-          memory: 128M
-
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
-
       labels:
         - traefik.enable=true
-        - traefik.docker.network=talkhub
-
-        ## Router Configuration
-        - traefik.http.routers.safeweb-presentation.rule=Host(`safeweb.talkhub.me`)
-        - traefik.http.routers.safeweb-presentation.entrypoints=websecure
-        - traefik.http.routers.safeweb-presentation.tls=true
-        - traefik.http.routers.safeweb-presentation.tls.certresolver=letsencryptresolver
-        - traefik.http.routers.safeweb-presentation.service=safeweb-presentation
-
-        ## Service Configuration
-        - traefik.http.services.safeweb-presentation.loadbalancer.server.port=3090
-        - traefik.http.services.safeweb-presentation.loadbalancer.passHostHeader=true
-
-    healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3090/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
+        - traefik.http.routers.safeweb.rule=Host(`safeweb.talkhub.me`)
+        - traefik.http.services.safeweb.loadbalancer.server.port=3090
+        - traefik.http.routers.safeweb.service=safeweb
+        - traefik.http.routers.safeweb.tls.certresolver=letsencryptresolver
+        - traefik.http.routers.safeweb.entrypoints=websecure
+        - traefik.http.routers.safeweb.tls=true
+## --------------------------- SAFEWEB PRESENTATION --------------------------- ##
 
 networks:
   talkhub:
-    external: true
     name: talkhub
+    external: true
