@@ -327,18 +327,12 @@ app.get('/', (req, res) => {
 // Start server
 app.listen(PORT, HOST, () => {
   console.log('');
-  console.log('╔══════════════════════════════════════════════════════════╗');
-  console.log('║     Safeweb × Vivo Presentation Server                   ║');
-  console.log('╠══════════════════════════════════════════════════════════╣');
-  console.log('║  Status: Running                                         ║');
-  console.log(\`║  URL: http://\${HOST}:\${PORT}                              ║\`);
-  console.log('║                                                          ║');
-  console.log('║  Endpoints:                                              ║');
-  console.log('║    /         - Presentation Viewer                       ║');
-  console.log('║    /app      - SafeID Vivo Demo App                      ║');
-  console.log('║    /slides   - Individual slides                         ║');
-  console.log('║    /health   - Health check                              ║');
-  console.log('║    /api/info - API info                                  ║');
-  console.log('╚══════════════════════════════════════════════════════════╝');
+  console.log('Safeweb Presentation Server running on http://' + HOST + ':' + PORT);
+  console.log('');
+  console.log('Endpoints:');
+  console.log('  /         - Presentation Viewer');
+  console.log('  /app      - SafeID Vivo Demo App');
+  console.log('  /slides   - Individual slides');
+  console.log('  /health   - Health check');
   console.log('');
 });
