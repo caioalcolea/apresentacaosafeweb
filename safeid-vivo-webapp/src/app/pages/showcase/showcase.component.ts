@@ -54,8 +54,8 @@ import { MatIconModule } from '@angular/material/icon';
             </div>
             <div class="content center">
               <div class="icon-circle">🔐</div>
-              <strong>O que é Certificado Digital?</strong>
-              <p class="description">É sua identidade digital com validade jurídica. Obrigatório para profissionais e MEIs.</p>
+              <strong>O que é SafeID?</strong>
+              <p class="description">Certificado digital ICP-Brasil com validade jurídica plena. Funciona em cartórios e tribunais.</p>
               <div class="progress-dots">
                 <span class="dot active"></span>
                 <span class="dot"></span>

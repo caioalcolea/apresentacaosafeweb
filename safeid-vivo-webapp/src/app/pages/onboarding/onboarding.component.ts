@@ -171,10 +171,11 @@ interface OnboardingStep {
     }
 
     .step-title {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 700;
       color: #333;
       margin: 0 0 16px 0;
+      line-height: 28px;
     }
 
     .step-description {
@@ -253,8 +254,8 @@ export class OnboardingComponent {
   steps: OnboardingStep[] = [
     {
       icon: '🔐',
-      title: 'O que é Certificado Digital?',
-      description: 'É sua identidade digital com validade jurídica plena. Funciona em cartórios, tribunais e conselhos profissionais.'
+      title: 'O que é SafeID?',
+      description: 'Certificado digital ICP-Brasil com validade jurídica plena. Funciona no cartório, tribunal e conselhos profissionais.'
     },
     {
       icon: '👨‍⚕️',
