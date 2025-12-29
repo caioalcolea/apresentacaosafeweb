@@ -10,7 +10,7 @@ WORKDIR /app/angular
 
 # Copy Angular app source
 COPY safeid-vivo-webapp/package*.json ./
-RUN npm ci --legacy-peer-deps
+RUN npm install --legacy-peer-deps
 
 COPY safeid-vivo-webapp/ ./
 RUN npm run build
@@ -32,7 +32,7 @@ RUN addgroup -g 1001 -S nodejs && \
 
 # Copy server files
 COPY server/package*.json ./
-RUN npm ci --only=production && npm cache clean --force
+RUN npm install --omit=dev && npm cache clean --force
 
 COPY server/server.js ./
 
