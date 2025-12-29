@@ -1,0 +1,58 @@
+version: "3.7"
+
+services:
+  safeweb-presentation:
+    image: safeweb-presentation:latest
+    working_dir: /app
+    networks:
+      - talkhub
+    environment:
+      # Application
+      NODE_ENV: "production"
+      PORT: "3090"
+      HOST: "0.0.0.0"
+      TZ: "America/Sao_Paulo"
+
+      # CORS
+      CORS_ORIGINS: "https://safeweb.talkhub.me,https://apresentacao.safeweb.com.br,http://localhost:3090"
+
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+        reservations:
+          cpus: "0.1"
+          memory: 128M
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      labels:
+        # Traefik Enable
+        - "traefik.enable=true"
+
+        # Router Configuration
+        - "traefik.http.routers.safeweb-presentation.rule=Host(`safeweb.talkhub.me`)"
+        - "traefik.http.routers.safeweb-presentation.entrypoints=websecure"
+        - "traefik.http.routers.safeweb-presentation.tls=true"
+        - "traefik.http.routers.safeweb-presentation.tls.certresolver=letsencryptresolver"
+        - "traefik.http.routers.safeweb-presentation.service=safeweb-presentation"
+
+        # Service Configuration
+        - "traefik.http.services.safeweb-presentation.loadbalancer.server.port=3090"
+        - "traefik.http.services.safeweb-presentation.loadbalancer.passHostHeader=true"
+
+        # CRITICAL: Network for Traefik routing
+        - "traefik.docker.network=talkhub"
+
+networks:
+  talkhub:
+    name: talkhub
+    external: true

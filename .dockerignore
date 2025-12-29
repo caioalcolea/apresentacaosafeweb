@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+safeid-vivo-webapp/node_modules/
+server/node_modules/
+
+# Build outputs (will be recreated in Docker)
+safeid-vivo-webapp/dist/
+safeid-vivo-webapp/.angular/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.*
+
+# Documentation
+README.md
+docs/
+
+# Test files
+*.spec.ts
+*.test.ts
+coverage/
