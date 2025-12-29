@@ -1,113 +1,215 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-<body class="col" style="width: 960px; height: 540px; background: #1a1a1a;">
-  
-  <!-- Title Zone -->
-  <div style="width: 920px; margin: 0 20px; padding-top: 25px;" class="fit">
-    <p style="font-size: 12px; color: #DC3545; text-transform: uppercase; letter-spacing: 3px; margin: 0 0 8px 0;">
-      🔴 CONTEXTO DE URGÊNCIA
-    </p>
-    <h1 style="font-size: 38px; color: white; font-weight: 700; margin: 0;">
-      O Brasil Está Sob Ataque Digital
-    </h1>
+<head>
+  <link rel="stylesheet" href="theme-safeweb.css">
+  <style>
+    .bar-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      height: 140px;
+      padding: 0 10px;
+    }
+    .bar-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .bar {
+      width: 50px;
+      background: linear-gradient(180deg, var(--safeweb-primary) 0%, var(--safeweb-dark-blue) 100%);
+      border-radius: 4px 4px 0 0;
+      transition: all 0.3s ease;
+    }
+    .bar.highlight {
+      background: linear-gradient(180deg, #ef4444 0%, #b91c1c 100%);
+    }
+    .bar-label {
+      font-size: 10px;
+      color: var(--text-medium);
+      text-align: center;
+    }
+    .bar-value {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .stat-ring {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: conic-gradient(#ef4444 0deg 130deg, #e2e8f0 130deg 360deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .stat-ring-inner {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body class="slide col" style="background: var(--safeweb-white);">
+
+  <!-- Header -->
+  <div class="slide-header fit">
+    <div class="row" style="justify-content: space-between; align-items: flex-start;">
+      <div>
+        <p class="slide-category" style="color: #ef4444;">⚠️ CONTEXTO DE URGÊNCIA</p>
+        <h1 class="slide-title">O Brasil Está Sob Ataque Digital</h1>
+      </div>
+      <img src="assets/safeweb-logo.png" alt="Safeweb" class="logo-safeweb small">
+    </div>
   </div>
-  
-  <!-- Content Zone -->
-  <div class="fill-height row" style="padding: 20px 40px; gap: 30px;">
-    
-    <!-- Left Column - Big Numbers -->
-    <div class="col" style="width: 45%; gap: 15px;">
-      
-      <!-- Main Stat -->
-      <div style="background: linear-gradient(135deg, #DC3545 0%, #a71d2a 100%); padding: 25px; border-radius: 12px;">
-        <p style="font-size: 11px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px; margin: 0 0 5px 0;">
+
+  <!-- Content -->
+  <div class="slide-content fill row gap-24">
+
+    <!-- Left Column - Main Stat + Chart -->
+    <div class="col" style="flex: 1; gap: 16px;">
+
+      <!-- Main Stat Card -->
+      <div class="card" style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border: 1px solid #fecaca;">
+        <p style="font-size: 11px; color: #b91c1c; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px 0;">
           Prejuízo Total 2024
         </p>
-        <p style="font-size: 52px; color: white; font-weight: 700; margin: 0; line-height: 1;">
+        <p style="font-size: 42px; color: #b91c1c; font-weight: 700; margin: 0; line-height: 1;">
           R$ 10,1 bi
         </p>
-        <p style="font-size: 14px; color: rgba(255,255,255,0.8); margin: 8px 0 0 0;">
+        <p style="font-size: 12px; color: #991b1b; margin: 8px 0 0 0;">
           +17% vs 2023 • Fonte: FEBRABAN
         </p>
       </div>
-      
-      <!-- Secondary Stats -->
-      <div class="row" style="gap: 12px;">
-        <div style="flex: 1; background: #2a2a2a; padding: 18px; border-radius: 10px; border-left: 4px solid #FF6600;">
-          <p style="font-size: 28px; color: #FF6600; font-weight: 700; margin: 0;">+43%</p>
-          <p style="font-size: 11px; color: #999; margin: 5px 0 0 0;">Fraudes PIX (YoY)</p>
-        </div>
-        <div style="flex: 1; background: #2a2a2a; padding: 18px; border-radius: 10px; border-left: 4px solid #FF6600;">
-          <p style="font-size: 28px; color: #FF6600; font-weight: 700; margin: 0;">+233%</p>
-          <p style="font-size: 11px; color: #999; margin: 5px 0 0 0;">Crimes Cibernéticos</p>
+
+      <!-- Bar Chart - Fraud Growth -->
+      <div class="card" style="padding: 16px;">
+        <p style="font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 12px 0;">
+          Evolução das Fraudes Digitais (R$ bi)
+        </p>
+        <div class="bar-chart">
+          <div class="bar-item">
+            <span class="bar-value">5.8</span>
+            <div class="bar" style="height: 58px;"></div>
+            <span class="bar-label">2021</span>
+          </div>
+          <div class="bar-item">
+            <span class="bar-value">7.2</span>
+            <div class="bar" style="height: 72px;"></div>
+            <span class="bar-label">2022</span>
+          </div>
+          <div class="bar-item">
+            <span class="bar-value">8.6</span>
+            <div class="bar" style="height: 86px;"></div>
+            <span class="bar-label">2023</span>
+          </div>
+          <div class="bar-item">
+            <span class="bar-value">10.1</span>
+            <div class="bar highlight" style="height: 101px;"></div>
+            <span class="bar-label">2024</span>
+          </div>
         </div>
       </div>
-      
-      <div style="background: #2a2a2a; padding: 18px; border-radius: 10px; border-left: 4px solid #DC3545;">
-        <p style="font-size: 32px; color: white; font-weight: 700; margin: 0;">36%</p>
-        <p style="font-size: 12px; color: #999; margin: 5px 0 0 0;">dos brasileiros já foram vítimas de fraude digital</p>
+
+      <!-- Stats Row -->
+      <div class="row gap-12">
+        <div class="card" style="flex: 1; padding: 14px; border-left: 4px solid #ef4444;">
+          <p style="font-size: 24px; color: #ef4444; font-weight: 700; margin: 0;">+43%</p>
+          <p style="font-size: 10px; color: var(--text-medium); margin: 4px 0 0 0;">Fraudes PIX (YoY)</p>
+        </div>
+        <div class="card" style="flex: 1; padding: 14px; border-left: 4px solid #ef4444;">
+          <p style="font-size: 24px; color: #ef4444; font-weight: 700; margin: 0;">+233%</p>
+          <p style="font-size: 10px; color: var(--text-medium); margin: 4px 0 0 0;">Crimes Cibernéticos</p>
+        </div>
       </div>
-      
+
     </div>
-    
-    <!-- Right Column - Types -->
-    <div class="col" style="width: 55%; gap: 12px;">
-      
-      <p style="font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 5px 0;">
+
+    <!-- Right Column - Vulnerabilities -->
+    <div class="col" style="flex: 1; gap: 12px;">
+
+      <p style="font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin: 0;">
         Principais Vulnerabilidades
       </p>
-      
-      <div style="background: #2a2a2a; padding: 16px 20px; border-radius: 10px;">
+
+      <div class="card" style="padding: 14px 18px;">
         <div class="row" style="justify-content: space-between; align-items: center;">
-          <div>
-            <p style="font-size: 15px; color: white; font-weight: 600; margin: 0;">Fraude de Identidade</p>
-            <p style="font-size: 11px; color: #888; margin: 4px 0 0 0;">Assinaturas falsificadas, documentos contestados</p>
+          <div class="row gap-12" style="align-items: center;">
+            <div class="icon-circle" style="background: #fef2f2; color: #ef4444;">🎭</div>
+            <div>
+              <p style="font-size: 14px; color: var(--text-dark); font-weight: 600; margin: 0;">Fraude de Identidade</p>
+              <p style="font-size: 10px; color: var(--text-light); margin: 3px 0 0 0;">Assinaturas falsificadas, documentos contestados</p>
+            </div>
           </div>
-          <span style="color: #DC3545; font-size: 18px; font-weight: 700;">+67%</span>
+          <span class="badge badge-danger">+67%</span>
         </div>
       </div>
-      
-      <div style="background: #2a2a2a; padding: 16px 20px; border-radius: 10px;">
+
+      <div class="card" style="padding: 14px 18px;">
         <div class="row" style="justify-content: space-between; align-items: center;">
-          <div>
-            <p style="font-size: 15px; color: white; font-weight: 600; margin: 0;">Phishing & Malware</p>
-            <p style="font-size: 11px; color: #888; margin: 4px 0 0 0;">Roubo de credenciais, invasão de contas</p>
+          <div class="row gap-12" style="align-items: center;">
+            <div class="icon-circle" style="background: #fef2f2; color: #ef4444;">🎣</div>
+            <div>
+              <p style="font-size: 14px; color: var(--text-dark); font-weight: 600; margin: 0;">Phishing & Malware</p>
+              <p style="font-size: 10px; color: var(--text-light); margin: 3px 0 0 0;">Roubo de credenciais, invasão de contas</p>
+            </div>
           </div>
-          <span style="color: #DC3545; font-size: 18px; font-weight: 700;">+52%</span>
+          <span class="badge badge-danger">+52%</span>
         </div>
       </div>
-      
-      <div style="background: #2a2a2a; padding: 16px 20px; border-radius: 10px;">
+
+      <div class="card" style="padding: 14px 18px;">
         <div class="row" style="justify-content: space-between; align-items: center;">
-          <div>
-            <p style="font-size: 15px; color: white; font-weight: 600; margin: 0;">Roubo de Dados</p>
-            <p style="font-size: 11px; color: #888; margin: 4px 0 0 0;">Vazamentos LGPD, exposição de informações</p>
+          <div class="row gap-12" style="align-items: center;">
+            <div class="icon-circle" style="background: #fef2f2; color: #ef4444;">💾</div>
+            <div>
+              <p style="font-size: 14px; color: var(--text-dark); font-weight: 600; margin: 0;">Roubo de Dados</p>
+              <p style="font-size: 10px; color: var(--text-light); margin: 3px 0 0 0;">Vazamentos LGPD, exposição de informações</p>
+            </div>
           </div>
-          <span style="color: #DC3545; font-size: 18px; font-weight: 700;">+38%</span>
+          <span class="badge badge-danger">+38%</span>
         </div>
       </div>
-      
-      <!-- Solution Hint -->
-      <div style="background: linear-gradient(135deg, #660099 0%, #4A0072 100%); padding: 18px 20px; border-radius: 10px; margin-top: 5px;">
-        <p style="font-size: 13px; color: white; margin: 0;">
-          <strong>💡 Certificado ICP-Brasil = Não-Repúdio</strong>
+
+      <!-- Ring Stat -->
+      <div class="row" style="align-items: center; justify-content: center; margin-top: 4px;">
+        <div class="stat-ring">
+          <div class="stat-ring-inner">
+            <span style="font-size: 20px; font-weight: 700; color: #ef4444;">36%</span>
+          </div>
+        </div>
+        <p style="font-size: 12px; color: var(--text-medium); margin-left: 16px; max-width: 150px;">
+          dos brasileiros já foram vítimas de fraude digital
         </p>
-        <p style="font-size: 11px; color: rgba(255,255,255,0.8); margin: 6px 0 0 0;">
+      </div>
+
+      <!-- Solution Hint -->
+      <div class="card card-primary" style="padding: 14px 18px; margin-top: auto;">
+        <p style="font-size: 12px; color: white; font-weight: 600; margin: 0;">
+          💡 Certificado ICP-Brasil = Não-Repúdio
+        </p>
+        <p style="font-size: 10px; color: rgba(255,255,255,0.85); margin: 4px 0 0 0;">
           Impossível contestar. Impossível falsificar. Presunção legal de veracidade.
         </p>
       </div>
-      
+
     </div>
-    
+
   </div>
-  
+
   <!-- Footer -->
-  <div class="fit" style="padding: 10px 40px; background: #111;">
-    <p style="font-size: 10px; color: #666; margin: 0;">
+  <div class="slide-footer fit">
+    <p style="font-size: 10px; color: var(--text-light); margin: 0;">
       Fonte: FEBRABAN (2024), Polícia Federal, MJSP • Dados oficiais consolidados
     </p>
   </div>
-  
+
 </body>
 </html>

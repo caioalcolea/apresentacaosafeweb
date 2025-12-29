@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-<body class="col" style="width: 960px; height: 540px; background: linear-gradient(135deg, #660099 0%, #4A0072 50%, #FF6600 100%);">
-  
+<head>
+  <link rel="stylesheet" href="theme-safeweb.css">
+  <style>
+    .cta-container {
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      background: linear-gradient(135deg, var(--safeweb-button) 0%, #0a1628 100%);
+    }
+    .logo-box {
+      background: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+    }
+    .stat-chip {
+      background: rgba(255,255,255,0.1);
+      padding: 15px 25px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .cta-box {
+      background: white;
+      padding: 25px 50px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    .step-item {
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="slide col" style="background: var(--safeweb-button);">
+
   <!-- Main Content - Centered -->
-  <div class="fill-height col" style="justify-content: center; align-items: center; padding: 40px;">
-    
+  <div class="fill col cta-container">
+
     <!-- Logos Partnership -->
-    <div class="row fit" style="gap: 30px; align-items: center; margin-bottom: 30px;">
-      <div style="background: white; padding: 15px 25px; border-radius: 10px;">
-        <span style="font-size: 24px; font-weight: 700; color: #660099;">SAFEWEB</span>
+    <div class="row fit gap-24" style="align-items: center; margin-bottom: 30px;">
+      <div class="logo-box">
+        <img src="assets/safeweb-logo.png" alt="Safeweb" style="height: 36px;">
       </div>
       <span style="font-size: 28px; color: white;">×</span>
-      <div style="background: white; padding: 15px 25px; border-radius: 10px;">
-        <span style="font-size: 24px; font-weight: 700; color: #660099;">VIVO</span>
+      <div class="logo-box">
+        <span style="font-size: 24px; font-weight: 700; color: var(--vivo-purple);">VIVO</span>
       </div>
     </div>
-    
+
     <!-- Main Tagline -->
     <div style="text-align: center; margin-bottom: 30px;">
       <p style="font-size: 22px; color: rgba(255,255,255,0.9); margin: 0 0 15px 0;">
@@ -29,78 +60,73 @@
         ASSINOU? VALEU!
       </h1>
     </div>
-    
+
     <!-- Key Numbers Row -->
-    <div class="row fit" style="gap: 25px; margin-bottom: 30px;">
-      
-      <div style="background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 10px; text-align: center;">
+    <div class="row fit gap-24" style="margin-bottom: 30px;">
+
+      <div class="stat-chip">
         <p style="font-size: 28px; color: white; font-weight: 700; margin: 0;">33M</p>
         <p style="font-size: 11px; color: rgba(255,255,255,0.8); margin: 5px 0 0 0;">clientes Vivo<br>potenciais</p>
       </div>
-      
-      <div style="background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 10px; text-align: center;">
-        <p style="font-size: 28px; color: #FF6B6B; font-weight: 700; margin: 0;">~25%</p>
+
+      <div class="stat-chip">
+        <p style="font-size: 28px; color: var(--success); font-weight: 700; margin: 0;">~25%</p>
         <p style="font-size: 11px; color: rgba(255,255,255,0.8); margin: 5px 0 0 0;">market share<br>Safeweb hoje</p>
       </div>
-      
-      <div style="background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 10px; text-align: center;">
+
+      <div class="stat-chip">
         <p style="font-size: 28px; color: white; font-weight: 700; margin: 0;">R$ 303M</p>
         <p style="font-size: 11px; color: rgba(255,255,255,0.8); margin: 5px 0 0 0;">receita potencial<br>Ano 1</p>
       </div>
-      
-      <div style="background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 10px; text-align: center;">
+
+      <div class="stat-chip">
         <p style="font-size: 28px; color: white; font-weight: 700; margin: 0;">62%</p>
         <p style="font-size: 11px; color: rgba(255,255,255,0.8); margin: 5px 0 0 0;">market share<br>projetado</p>
       </div>
-      
+
     </div>
-    
+
     <!-- CTA Box -->
-    <div style="background: white; padding: 25px 50px; border-radius: 15px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
-      <p style="font-size: 16px; color: #660099; font-weight: 600; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 2px;">
+    <div class="cta-box">
+      <p style="font-size: 16px; color: var(--safeweb-primary); font-weight: 600; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 2px;">
         PRÓXIMOS PASSOS
       </p>
-      <div class="row" style="gap: 30px; justify-content: center; align-items: center;">
-        <div style="text-align: center;">
-          <p style="font-size: 14px; color: #333; margin: 0;">📋</p>
-          <p style="font-size: 12px; color: #666; margin: 5px 0 0 0;">Validar dados<br>comerciais</p>
+      <div class="row gap-24" style="justify-content: center; align-items: center;">
+        <div class="step-item">
+          <p style="font-size: 14px; color: var(--text-dark); margin: 0;">📋</p>
+          <p style="font-size: 12px; color: var(--text-medium); margin: 5px 0 0 0;">Validar dados<br>comerciais</p>
         </div>
-        <div style="font-size: 20px; color: #ccc;">→</div>
-        <div style="text-align: center;">
-          <p style="font-size: 14px; color: #333; margin: 0;">🎬</p>
-          <p style="font-size: 12px; color: #666; margin: 5px 0 0 0;">Aprovar<br>roteiro vídeo</p>
+        <div style="font-size: 20px; color: var(--border-light);">→</div>
+        <div class="step-item">
+          <p style="font-size: 14px; color: var(--text-dark); margin: 0;">🎬</p>
+          <p style="font-size: 12px; color: var(--text-medium); margin: 5px 0 0 0;">Aprovar<br>roteiro vídeo</p>
         </div>
-        <div style="font-size: 20px; color: #ccc;">→</div>
-        <div style="text-align: center;">
-          <p style="font-size: 14px; color: #333; margin: 0;">📱</p>
-          <p style="font-size: 12px; color: #666; margin: 5px 0 0 0;">Definir UX<br>app Vivo</p>
+        <div style="font-size: 20px; color: var(--border-light);">→</div>
+        <div class="step-item">
+          <p style="font-size: 14px; color: var(--text-dark); margin: 0;">📱</p>
+          <p style="font-size: 12px; color: var(--text-medium); margin: 5px 0 0 0;">Definir UX<br>app Vivo</p>
         </div>
-        <div style="font-size: 20px; color: #ccc;">→</div>
-        <div style="text-align: center;">
-          <p style="font-size: 14px; color: #333; margin: 0;">🚀</p>
-          <p style="font-size: 12px; color: #666; margin: 5px 0 0 0;">Go-live<br>~7 semanas</p>
+        <div style="font-size: 20px; color: var(--border-light);">→</div>
+        <div class="step-item">
+          <p style="font-size: 14px; color: var(--text-dark); margin: 0;">🚀</p>
+          <p style="font-size: 12px; color: var(--text-medium); margin: 5px 0 0 0;">Go-live<br>~7 semanas</p>
         </div>
       </div>
     </div>
-    
+
   </div>
-  
+
   <!-- Footer -->
-  <div class="fit" style="padding: 15px 40px; background: rgba(0,0,0,0.2);">
+  <div class="fit" style="padding: 15px 40px; background: rgba(0,0,0,0.3);">
     <div class="row" style="justify-content: space-between; align-items: center;">
       <p style="font-size: 10px; color: rgba(255,255,255,0.7); margin: 0;">
         Move4 Publicidade • Dezembro 2025
       </p>
-      <div style="background: #fff0f0; padding: 6px 12px; border-radius: 5px; border: 1px dashed #DC3545;">
-        <p style="font-size: 9px; color: #DC3545; font-weight: 600; margin: 0;">
-          ⚠️ DADOS EM VERMELHO: VALIDAR COM SAFEWEB
-        </p>
-      </div>
       <p style="font-size: 10px; color: rgba(255,255,255,0.7); margin: 0;">
         Safeweb × Vivo • Certificação Digital B2C
       </p>
     </div>
   </div>
-  
+
 </body>
 </html>

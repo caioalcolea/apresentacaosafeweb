@@ -1,186 +1,194 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-<body class="col" style="width: 960px; height: 540px; background: #ffffff;">
-  
-  <!-- Title Zone -->
-  <div style="width: 920px; margin: 0 20px; padding-top: 20px;" class="fit">
-    <div class="row" style="justify-content: space-between; align-items: center;">
+<head>
+  <link rel="stylesheet" href="theme-safeweb.css">
+  <style>
+    .scenario-card {
+      padding: 15px 18px;
+      border-radius: 12px;
+    }
+    .metric-card {
+      padding: 14px;
+      border-radius: 10px;
+    }
+    .revenue-card {
+      padding: 14px 16px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="slide col" style="background: var(--safeweb-white);">
+
+  <!-- Header -->
+  <div class="slide-header fit">
+    <div class="row" style="justify-content: space-between; align-items: flex-start;">
       <div>
-        <p style="font-size: 12px; color: #660099; text-transform: uppercase; letter-spacing: 3px; margin: 0 0 8px 0;">
-          PROJEÇÃO FINANCEIRA
-        </p>
-        <h1 style="font-size: 34px; color: #1d1d1d; font-weight: 700; margin: 0;">
-          Cenários de Receita — Parceria Vivo + Safeweb
-        </h1>
+        <p class="slide-category">PROJEÇÃO FINANCEIRA</p>
+        <h1 class="slide-title">Cenários de Receita — Parceria Vivo + Safeweb</h1>
       </div>
-      <div style="background: #fff0f0; padding: 8px 12px; border-radius: 6px; border: 1px dashed #DC3545;">
-        <p style="font-size: 9px; color: #DC3545; font-weight: 600; margin: 0; text-align: center;">
-          ⚠️ DADOS EXEMPLO<br>VALIDAR COM SAFEWEB
-        </p>
-      </div>
+      <img src="assets/safeweb-logo.png" alt="Safeweb" class="logo-safeweb small">
     </div>
   </div>
-  
-  <!-- Content Zone -->
-  <div class="fill-height row" style="padding: 12px 40px; gap: 20px;">
-    
+
+  <!-- Content -->
+  <div class="slide-content fill row gap-24">
+
     <!-- Left - Scenario Cards -->
-    <div class="col" style="width: 55%; gap: 10px;">
-      
+    <div class="col" style="flex: 1.1; gap: 10px;">
+
       <!-- Conservador -->
-      <div style="background: #f5f5f5; padding: 15px 18px; border-radius: 12px;">
+      <div class="scenario-card card">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
-            <div class="row" style="gap: 10px; align-items: center; margin-bottom: 6px;">
-              <div style="width: 12px; height: 12px; background: #888; border-radius: 50%;"></div>
-              <p style="font-size: 13px; color: #666; font-weight: 700; margin: 0;">CONSERVADOR</p>
+            <div class="row gap-8" style="align-items: center; margin-bottom: 6px;">
+              <div style="width: 12px; height: 12px; background: var(--text-light); border-radius: 50%;"></div>
+              <p style="font-size: 13px; color: var(--text-medium); font-weight: 700; margin: 0;">CONSERVADOR</p>
             </div>
-            <p style="font-size: 11px; color: #888; margin: 0;">Penetração 5% da base Vivo</p>
+            <p style="font-size: 11px; color: var(--text-light); margin: 0;">Penetração 5% da base Vivo</p>
           </div>
-          <div class="row" style="gap: 20px; align-items: center;">
+          <div class="row gap-24" style="align-items: center;">
             <div style="text-align: center;">
-              <p style="font-size: 22px; color: #333; font-weight: 700; margin: 0;">1,65M</p>
-              <p style="font-size: 9px; color: #888; margin: 0;">clientes</p>
+              <p style="font-size: 22px; color: var(--text-dark); font-weight: 700; margin: 0;">1,65M</p>
+              <p style="font-size: 9px; color: var(--text-light); margin: 0;">clientes</p>
             </div>
             <div style="text-align: center;">
-              <p style="font-size: 22px; color: #666; font-weight: 700; margin: 0;">R$ 60M</p>
-              <p style="font-size: 9px; color: #888; margin: 0;">receita total</p>
+              <p style="font-size: 22px; color: var(--text-medium); font-weight: 700; margin: 0;">R$ 60M</p>
+              <p style="font-size: 9px; color: var(--text-light); margin: 0;">receita total</p>
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Base Case - Highlighted -->
-      <div style="background: linear-gradient(135deg, #f8f5ff 0%, #efe8ff 100%); padding: 18px 20px; border-radius: 12px; border: 3px solid #660099;">
+      <div class="scenario-card" style="background: linear-gradient(135deg, rgba(12, 86, 222, 0.05) 0%, rgba(12, 86, 222, 0.1) 100%); border: 3px solid var(--safeweb-primary);">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
-            <div class="row" style="gap: 10px; align-items: center; margin-bottom: 6px;">
-              <div style="width: 14px; height: 14px; background: #660099; border-radius: 50%;"></div>
-              <p style="font-size: 14px; color: #660099; font-weight: 700; margin: 0;">BASE CASE</p>
-              <span style="background: #660099; color: white; font-size: 9px; padding: 2px 8px; border-radius: 10px;">RECOMENDADO</span>
+            <div class="row gap-8" style="align-items: center; margin-bottom: 6px;">
+              <div style="width: 14px; height: 14px; background: var(--safeweb-primary); border-radius: 50%;"></div>
+              <p style="font-size: 14px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">BASE CASE</p>
+              <span style="background: var(--safeweb-primary); color: white; font-size: 9px; padding: 2px 8px; border-radius: 10px;">RECOMENDADO</span>
             </div>
-            <p style="font-size: 11px; color: #666; margin: 0;">Penetração 15% da base Vivo</p>
+            <p style="font-size: 11px; color: var(--text-medium); margin: 0;">Penetração 15% da base Vivo</p>
           </div>
-          <div class="row" style="gap: 20px; align-items: center;">
+          <div class="row gap-24" style="align-items: center;">
             <div style="text-align: center;">
-              <p style="font-size: 26px; color: #660099; font-weight: 700; margin: 0;">4,95M</p>
-              <p style="font-size: 9px; color: #888; margin: 0;">clientes</p>
+              <p style="font-size: 26px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">4,95M</p>
+              <p style="font-size: 9px; color: var(--text-light); margin: 0;">clientes</p>
             </div>
             <div style="text-align: center;">
-              <p style="font-size: 26px; color: #660099; font-weight: 700; margin: 0;">R$ 303M</p>
-              <p style="font-size: 9px; color: #888; margin: 0;">receita total</p>
+              <p style="font-size: 26px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">R$ 303M</p>
+              <p style="font-size: 9px; color: var(--text-light); margin: 0;">receita total</p>
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Agressivo -->
-      <div style="background: linear-gradient(135deg, #fff5eb 0%, #ffe4cc 100%); padding: 15px 18px; border-radius: 12px; border: 2px solid #FF6600;">
+      <div class="scenario-card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.1) 100%); border: 2px solid var(--success);">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
-            <div class="row" style="gap: 10px; align-items: center; margin-bottom: 6px;">
-              <div style="width: 12px; height: 12px; background: #FF6600; border-radius: 50%;"></div>
-              <p style="font-size: 13px; color: #FF6600; font-weight: 700; margin: 0;">AGRESSIVO</p>
+            <div class="row gap-8" style="align-items: center; margin-bottom: 6px;">
+              <div style="width: 12px; height: 12px; background: var(--success); border-radius: 50%;"></div>
+              <p style="font-size: 13px; color: var(--success); font-weight: 700; margin: 0;">AGRESSIVO</p>
             </div>
-            <p style="font-size: 11px; color: #888; margin: 0;">Penetração 25% da base Vivo</p>
+            <p style="font-size: 11px; color: var(--text-light); margin: 0;">Penetração 25% da base Vivo</p>
           </div>
-          <div class="row" style="gap: 20px; align-items: center;">
+          <div class="row gap-24" style="align-items: center;">
             <div style="text-align: center;">
-              <p style="font-size: 22px; color: #FF6600; font-weight: 700; margin: 0;">8,25M</p>
-              <p style="font-size: 9px; color: #888; margin: 0;">clientes</p>
+              <p style="font-size: 22px; color: var(--success); font-weight: 700; margin: 0;">8,25M</p>
+              <p style="font-size: 9px; color: var(--text-light); margin: 0;">clientes</p>
             </div>
             <div style="text-align: center;">
-              <p style="font-size: 22px; color: #FF6600; font-weight: 700; margin: 0;">R$ 500M</p>
-              <p style="font-size: 9px; color: #888; margin: 0;">receita total</p>
+              <p style="font-size: 22px; color: var(--success); font-weight: 700; margin: 0;">R$ 500M</p>
+              <p style="font-size: 9px; color: var(--text-light); margin: 0;">receita total</p>
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Revenue Share Box -->
-      <div style="background: #1a1a1a; padding: 15px 18px; border-radius: 10px;">
-        <p style="font-size: 10px; color: #888; margin: 0 0 10px 0; text-transform: uppercase;">Modelo Revenue Share (Exemplo)</p>
-        <div class="row" style="gap: 12px;">
-          <div style="flex: 1; background: #333; padding: 12px; border-radius: 8px; text-align: center;">
-            <p style="font-size: 9px; color: #888; margin: 0 0 5px 0;">SAFEWEB</p>
-            <p style="font-size: 22px; color: #FF6B6B; font-weight: 700; margin: 0;">60%</p>
-            <p style="font-size: 10px; color: #888; margin: 5px 0 0 0;">R$ 182M</p>
+      <div class="card-dark" style="padding: 15px 18px; border-radius: 10px;">
+        <p style="font-size: 10px; color: rgba(255,255,255,0.6); margin: 0 0 10px 0; text-transform: uppercase;">Modelo Revenue Share (Exemplo)</p>
+        <div class="row gap-12">
+          <div style="flex: 1; background: rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; text-align: center;">
+            <p style="font-size: 9px; color: rgba(255,255,255,0.6); margin: 0 0 5px 0;">SAFEWEB</p>
+            <p style="font-size: 22px; color: white; font-weight: 700; margin: 0;">60%</p>
+            <p style="font-size: 10px; color: rgba(255,255,255,0.6); margin: 5px 0 0 0;">R$ 182M</p>
           </div>
-          <div style="flex: 1; background: #333; padding: 12px; border-radius: 8px; text-align: center;">
-            <p style="font-size: 9px; color: #888; margin: 0 0 5px 0;">VIVO</p>
-            <p style="font-size: 22px; color: #FF6B6B; font-weight: 700; margin: 0;">40%</p>
-            <p style="font-size: 10px; color: #888; margin: 5px 0 0 0;">R$ 121M</p>
+          <div style="flex: 1; background: rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; text-align: center;">
+            <p style="font-size: 9px; color: rgba(255,255,255,0.6); margin: 0 0 5px 0;">VIVO</p>
+            <p style="font-size: 22px; color: white; font-weight: 700; margin: 0;">40%</p>
+            <p style="font-size: 10px; color: rgba(255,255,255,0.6); margin: 5px 0 0 0;">R$ 121M</p>
           </div>
-          <div style="flex: 1.2; background: linear-gradient(135deg, #660099 0%, #4A0072 100%); padding: 12px; border-radius: 8px; text-align: center;">
+          <div style="flex: 1.2; background: linear-gradient(135deg, var(--safeweb-primary) 0%, var(--safeweb-dark-blue) 100%); padding: 12px; border-radius: 8px; text-align: center;">
             <p style="font-size: 9px; color: rgba(255,255,255,0.7); margin: 0 0 5px 0;">TOTAL ANO 1</p>
             <p style="font-size: 22px; color: white; font-weight: 700; margin: 0;">R$ 303M</p>
             <p style="font-size: 10px; color: rgba(255,255,255,0.7); margin: 5px 0 0 0;">Base Case</p>
           </div>
         </div>
       </div>
-      
+
     </div>
-    
+
     <!-- Right - Key Metrics -->
-    <div class="col" style="width: 45%; gap: 10px;">
-      
-      <p style="font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 2px; margin: 0;">
+    <div class="col" style="flex: 1; gap: 10px;">
+
+      <p style="font-size: 10px; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; margin: 0;">
         Métricas-Chave (Base Case)
       </p>
-      
-      <div style="background: linear-gradient(135deg, #28A745 0%, #1e7e34 100%); padding: 16px; border-radius: 12px;">
+
+      <div class="metric-card" style="background: linear-gradient(135deg, var(--success) 0%, #059669 100%);">
         <p style="font-size: 10px; color: rgba(255,255,255,0.8); margin: 0;">CAC (Custo Aquisição Cliente)</p>
         <p style="font-size: 36px; color: white; font-weight: 700; margin: 5px 0 0 0;">R$ 0</p>
         <p style="font-size: 10px; color: rgba(255,255,255,0.8); margin: 5px 0 0 0;">Cliente já está na base Vivo</p>
       </div>
-      
-      <div class="row" style="gap: 10px;">
-        <div style="flex: 1; background: #f5f5f5; padding: 14px; border-radius: 10px;">
-          <p style="font-size: 10px; color: #888; margin: 0;">LTV (5 anos)</p>
-          <p style="font-size: 20px; color: #660099; font-weight: 700; margin: 5px 0 0 0;">R$ 179</p>
+
+      <div class="row gap-12">
+        <div class="metric-card card" style="flex: 1;">
+          <p style="font-size: 10px; color: var(--text-light); margin: 0;">LTV (5 anos)</p>
+          <p style="font-size: 20px; color: var(--safeweb-primary); font-weight: 700; margin: 5px 0 0 0;">R$ 179</p>
         </div>
-        <div style="flex: 1; background: #f5f5f5; padding: 14px; border-radius: 10px;">
-          <p style="font-size: 10px; color: #888; margin: 0;">ARPU Adicional</p>
-          <p style="font-size: 20px; color: #FF6B6B; font-weight: 700; margin: 5px 0 0 0;">R$ 5,10</p>
-        </div>
-      </div>
-      
-      <div style="background: #f5f5f5; padding: 14px; border-radius: 10px;">
-        <p style="font-size: 10px; color: #888; margin: 0 0 8px 0;">Mix de Planos Estimado</p>
-        <div class="row" style="gap: 8px;">
-          <div style="flex: 1; text-align: center; background: white; padding: 8px; border-radius: 6px;">
-            <p style="font-size: 14px; color: #28A745; font-weight: 700; margin: 0;">70%</p>
-            <p style="font-size: 8px; color: #888; margin: 2px 0 0 0;">Grátis</p>
-          </div>
-          <div style="flex: 1; text-align: center; background: white; padding: 8px; border-radius: 6px;">
-            <p style="font-size: 14px; color: #333; font-weight: 700; margin: 0;">20%</p>
-            <p style="font-size: 8px; color: #888; margin: 2px 0 0 0;">R$ 2,99</p>
-          </div>
-          <div style="flex: 1; text-align: center; background: white; padding: 8px; border-radius: 6px;">
-            <p style="font-size: 14px; color: #333; font-weight: 700; margin: 0;">8%</p>
-            <p style="font-size: 8px; color: #888; margin: 2px 0 0 0;">R$ 6,99</p>
-          </div>
-          <div style="flex: 1; text-align: center; background: white; padding: 8px; border-radius: 6px;">
-            <p style="font-size: 14px; color: #660099; font-weight: 700; margin: 0;">2%</p>
-            <p style="font-size: 8px; color: #888; margin: 2px 0 0 0;">R$ 21,99</p>
-          </div>
+        <div class="metric-card card" style="flex: 1;">
+          <p style="font-size: 10px; color: var(--text-light); margin: 0;">ARPU Adicional</p>
+          <p style="font-size: 20px; color: var(--safeweb-dark-blue); font-weight: 700; margin: 5px 0 0 0;">R$ 5,10</p>
         </div>
       </div>
-      
+
+      <div class="metric-card card">
+        <p style="font-size: 10px; color: var(--text-light); margin: 0 0 8px 0;">Mix de Planos Estimado</p>
+        <div class="row gap-8">
+          <div style="flex: 1; text-align: center; background: var(--safeweb-light-bg); padding: 8px; border-radius: 6px;">
+            <p style="font-size: 14px; color: var(--success); font-weight: 700; margin: 0;">70%</p>
+            <p style="font-size: 8px; color: var(--text-light); margin: 2px 0 0 0;">Grátis</p>
+          </div>
+          <div style="flex: 1; text-align: center; background: var(--safeweb-light-bg); padding: 8px; border-radius: 6px;">
+            <p style="font-size: 14px; color: var(--text-dark); font-weight: 700; margin: 0;">20%</p>
+            <p style="font-size: 8px; color: var(--text-light); margin: 2px 0 0 0;">R$ 2,99</p>
+          </div>
+          <div style="flex: 1; text-align: center; background: var(--safeweb-light-bg); padding: 8px; border-radius: 6px;">
+            <p style="font-size: 14px; color: var(--text-dark); font-weight: 700; margin: 0;">8%</p>
+            <p style="font-size: 8px; color: var(--text-light); margin: 2px 0 0 0;">R$ 6,99</p>
+          </div>
+          <div style="flex: 1; text-align: center; background: var(--safeweb-light-bg); padding: 8px; border-radius: 6px;">
+            <p style="font-size: 14px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">2%</p>
+            <p style="font-size: 8px; color: var(--text-light); margin: 2px 0 0 0;">R$ 21,99</p>
+          </div>
+        </div>
+      </div>
+
       <!-- Safeweb Revenue -->
-      <div style="background: linear-gradient(135deg, #660099 0%, #4A0072 100%); padding: 14px 16px; border-radius: 10px;">
+      <div class="revenue-card card-primary">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
             <p style="font-size: 11px; color: white; font-weight: 600; margin: 0;">Receita Safeweb (60%)</p>
             <p style="font-size: 9px; color: rgba(255,255,255,0.7); margin: 3px 0 0 0;">Base Case Ano 1</p>
           </div>
-          <p style="font-size: 24px; color: #FF6B6B; font-weight: 700; margin: 0;">R$ 182M</p>
+          <p style="font-size: 24px; color: white; font-weight: 700; margin: 0;">R$ 182M</p>
         </div>
       </div>
-      
+
       <!-- Vivo Revenue -->
-      <div style="background: linear-gradient(135deg, #FF6600 0%, #cc5200 100%); padding: 14px 16px; border-radius: 10px;">
+      <div class="revenue-card" style="background: linear-gradient(135deg, var(--vivo-purple) 0%, #4A0072 100%);">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
             <p style="font-size: 11px; color: white; font-weight: 600; margin: 0;">Receita Vivo (40%)</p>
@@ -189,17 +197,17 @@
           <p style="font-size: 24px; color: white; font-weight: 700; margin: 0;">R$ 121M</p>
         </div>
       </div>
-      
+
     </div>
-    
+
   </div>
-  
+
   <!-- Footer -->
-  <div class="fit" style="padding: 8px 40px; background: #f5f5f5;">
-    <p style="font-size: 9px; color: #888; margin: 0;">
-      Projeções baseadas em base Vivo 33M pós-pago • Mix e Revenue Share exemplificativos — a negociar • <span style="color: #DC3545; font-weight: 600;">Dados em vermelho: validar com Safeweb</span>
+  <div class="slide-footer fit">
+    <p style="font-size: 9px; color: var(--text-light); margin: 0;">
+      Projeções baseadas em base Vivo 33M pós-pago • Mix e Revenue Share exemplificativos — a negociar
     </p>
   </div>
-  
+
 </body>
 </html>

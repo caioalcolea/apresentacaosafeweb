@@ -1,179 +1,183 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-<body class="col" style="width: 960px; height: 540px; background: #ffffff;">
-  
-  <!-- Title Zone -->
-  <div style="width: 920px; margin: 0 20px; padding-top: 20px;" class="fit">
-    <div class="row" style="justify-content: space-between; align-items: center;">
+<head>
+  <link rel="stylesheet" href="theme-safeweb.css">
+  <style>
+    .pricing-card {
+      padding: 16px 20px;
+      border-radius: 10px;
+    }
+    .value-card {
+      padding: 16px 18px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="slide col" style="background: var(--safeweb-white);">
+
+  <!-- Header -->
+  <div class="slide-header fit">
+    <div class="row" style="justify-content: space-between; align-items: flex-start;">
       <div>
-        <p style="font-size: 12px; color: #660099; text-transform: uppercase; letter-spacing: 3px; margin: 0 0 8px 0;">
-          ESTRUTURA COMERCIAL
-        </p>
-        <h1 style="font-size: 34px; color: #1d1d1d; font-weight: 700; margin: 0;">
-          Modelo de Negócio SVA
-        </h1>
+        <p class="slide-category">ESTRUTURA COMERCIAL</p>
+        <h1 class="slide-title">Modelo de Negócio SVA</h1>
       </div>
-      <div style="background: #fff0f0; padding: 8px 12px; border-radius: 6px; border: 1px dashed #DC3545;">
-        <p style="font-size: 9px; color: #DC3545; font-weight: 600; margin: 0; text-align: center;">
-          ⚠️ DADOS EXEMPLO<br>VALIDAR COM SAFEWEB
-        </p>
-      </div>
+      <img src="assets/safeweb-logo.png" alt="Safeweb" class="logo-safeweb small">
     </div>
   </div>
-  
-  <!-- Content Zone -->
-  <div class="fill-height row" style="padding: 15px 40px; gap: 25px;">
-    
+
+  <!-- Content -->
+  <div class="slide-content fill row gap-24">
+
     <!-- Left - Pricing Tiers -->
-    <div class="col" style="width: 55%; gap: 12px;">
-      
-      <p style="font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 2px; margin: 0;">
+    <div class="col" style="flex: 1.1; gap: 10px;">
+
+      <p style="font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; margin: 0;">
         Pacotes para Cliente Final
       </p>
-      
+
       <!-- Free Tier -->
-      <div style="background: linear-gradient(135deg, #f0fff4 0%, #d4edda 100%); padding: 18px 20px; border-radius: 12px; border: 2px solid #28A745;">
+      <div class="pricing-card" style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 2px solid var(--success);">
         <div class="row" style="justify-content: space-between; align-items: center;">
-          <div class="row" style="gap: 15px; align-items: center;">
-            <div style="background: #28A745; padding: 8px 15px; border-radius: 6px;">
+          <div class="row gap-16" style="align-items: center;">
+            <div style="background: var(--success); padding: 8px 15px; border-radius: 6px;">
               <span style="font-size: 12px; color: white; font-weight: 700;">GRÁTIS</span>
             </div>
             <div>
-              <p style="font-size: 16px; color: #333; font-weight: 700; margin: 0;">Básico Vivo Pós</p>
-              <p style="font-size: 12px; color: #666; margin: 3px 0 0 0;">3 assinaturas/mês • Subsidiado</p>
+              <p style="font-size: 16px; color: var(--text-dark); font-weight: 700; margin: 0;">Básico Vivo Pós</p>
+              <p style="font-size: 12px; color: var(--text-medium); margin: 3px 0 0 0;">3 assinaturas/mês • Subsidiado</p>
             </div>
           </div>
           <div style="text-align: right;">
-            <p style="font-size: 24px; color: #28A745; font-weight: 700; margin: 0;">R$ 0</p>
-            <p style="font-size: 10px; color: #888; margin: 0;">incluso no plano</p>
+            <p style="font-size: 24px; color: var(--success); font-weight: 700; margin: 0;">R$ 0</p>
+            <p style="font-size: 10px; color: var(--text-light); margin: 0;">incluso no plano</p>
           </div>
         </div>
       </div>
-      
+
       <!-- Essencial -->
-      <div style="background: #f5f5f5; padding: 16px 20px; border-radius: 10px;">
+      <div class="pricing-card card">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
-            <p style="font-size: 15px; color: #333; font-weight: 700; margin: 0;">Pacote Essencial</p>
-            <p style="font-size: 12px; color: #666; margin: 3px 0 0 0;">10 assinaturas/mês</p>
+            <p style="font-size: 15px; color: var(--text-dark); font-weight: 700; margin: 0;">Pacote Essencial</p>
+            <p style="font-size: 12px; color: var(--text-medium); margin: 3px 0 0 0;">10 assinaturas/mês</p>
           </div>
           <div style="text-align: right;">
-            <p style="font-size: 20px; color: #660099; font-weight: 700; margin: 0;">R$ 2,99</p>
-            <p style="font-size: 10px; color: #888; margin: 0;">/mês</p>
+            <p style="font-size: 20px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">R$ 2,99</p>
+            <p style="font-size: 10px; color: var(--text-light); margin: 0;">/mês</p>
           </div>
         </div>
       </div>
-      
+
       <!-- Profissional -->
-      <div style="background: #f5f5f5; padding: 16px 20px; border-radius: 10px;">
+      <div class="pricing-card card">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
-            <p style="font-size: 15px; color: #333; font-weight: 700; margin: 0;">Pacote Profissional</p>
-            <p style="font-size: 12px; color: #666; margin: 3px 0 0 0;">50 assinaturas/mês</p>
+            <p style="font-size: 15px; color: var(--text-dark); font-weight: 700; margin: 0;">Pacote Profissional</p>
+            <p style="font-size: 12px; color: var(--text-medium); margin: 3px 0 0 0;">50 assinaturas/mês</p>
           </div>
           <div style="text-align: right;">
-            <p style="font-size: 20px; color: #660099; font-weight: 700; margin: 0;">R$ 6,99</p>
-            <p style="font-size: 10px; color: #888; margin: 0;">/mês</p>
+            <p style="font-size: 20px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">R$ 6,99</p>
+            <p style="font-size: 10px; color: var(--text-light); margin: 0;">/mês</p>
           </div>
         </div>
       </div>
-      
+
       <!-- Ilimitado -->
-      <div style="background: linear-gradient(135deg, #f8f5ff 0%, #efe8ff 100%); padding: 16px 20px; border-radius: 10px; border: 2px solid #660099;">
+      <div class="pricing-card" style="background: linear-gradient(135deg, rgba(12, 86, 222, 0.05) 0%, rgba(12, 86, 222, 0.1) 100%); border: 2px solid var(--safeweb-primary);">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
-            <p style="font-size: 15px; color: #660099; font-weight: 700; margin: 0;">Pacote Ilimitado</p>
-            <p style="font-size: 12px; color: #666; margin: 3px 0 0 0;">Assinaturas ilimitadas</p>
+            <p style="font-size: 15px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">Pacote Ilimitado</p>
+            <p style="font-size: 12px; color: var(--text-medium); margin: 3px 0 0 0;">Assinaturas ilimitadas</p>
           </div>
           <div style="text-align: right;">
-            <p style="font-size: 20px; color: #660099; font-weight: 700; margin: 0;">R$ 21,99</p>
-            <p style="font-size: 10px; color: #888; margin: 0;">/mês</p>
+            <p style="font-size: 20px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">R$ 21,99</p>
+            <p style="font-size: 10px; color: var(--text-light); margin: 0;">/mês</p>
           </div>
         </div>
       </div>
-      
+
       <!-- Cost for Vivo -->
-      <div style="background: #1a1a1a; padding: 15px 18px; border-radius: 10px; margin-top: 5px;">
+      <div class="card-dark" style="padding: 15px 18px; border-radius: 10px; margin-top: 5px;">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
-            <p style="font-size: 12px; color: #888; margin: 0;">Custo Vivo (plano básico)</p>
-            <p style="font-size: 10px; color: #666; margin: 3px 0 0 0;">3 assinaturas inclusas por cliente</p>
+            <p style="font-size: 12px; color: rgba(255,255,255,0.7); margin: 0;">Custo Vivo (plano básico)</p>
+            <p style="font-size: 10px; color: rgba(255,255,255,0.5); margin: 3px 0 0 0;">3 assinaturas inclusas por cliente</p>
           </div>
           <div style="text-align: right;">
-            <p style="font-size: 18px; color: #FF6B6B; font-weight: 700; margin: 0;">R$ 0,12</p>
-            <p style="font-size: 9px; color: #888; margin: 0;">/mês/cliente</p>
+            <p style="font-size: 18px; color: white; font-weight: 700; margin: 0;">R$ 0,12</p>
+            <p style="font-size: 9px; color: rgba(255,255,255,0.6); margin: 0;">/mês/cliente</p>
           </div>
         </div>
       </div>
-      
+
     </div>
-    
+
     <!-- Right - Value Proposition -->
-    <div class="col" style="width: 45%; gap: 15px;">
-      
-      <p style="font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 2px; margin: 0;">
+    <div class="col" style="flex: 1; gap: 12px;">
+
+      <p style="font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; margin: 0;">
         Proposta de Valor para a Vivo
       </p>
-      
-      <div style="background: #f5f5f5; padding: 16px 18px; border-radius: 10px;">
-        <div class="row" style="gap: 12px; align-items: center;">
+
+      <div class="value-card card">
+        <div class="row gap-12" style="align-items: center;">
           <span style="font-size: 24px;">🏆</span>
           <div>
-            <p style="font-size: 13px; color: #333; font-weight: 700; margin: 0;">Diferenciação Competitiva</p>
-            <p style="font-size: 11px; color: #666; margin: 4px 0 0 0;">Único plano pós-pago com certificação digital inclusa</p>
+            <p style="font-size: 13px; color: var(--text-dark); font-weight: 700; margin: 0;">Diferenciação Competitiva</p>
+            <p style="font-size: 11px; color: var(--text-medium); margin: 4px 0 0 0;">Único plano pós-pago com certificação digital inclusa</p>
           </div>
         </div>
       </div>
-      
-      <div style="background: #f5f5f5; padding: 16px 18px; border-radius: 10px;">
-        <div class="row" style="gap: 12px; align-items: center;">
+
+      <div class="value-card card">
+        <div class="row gap-12" style="align-items: center;">
           <span style="font-size: 24px;">📈</span>
           <div>
-            <p style="font-size: 13px; color: #333; font-weight: 700; margin: 0;">Aumento de ARPU</p>
-            <p style="font-size: 11px; color: #666; margin: 4px 0 0 0;">Receita adicional com pacotes premium</p>
+            <p style="font-size: 13px; color: var(--text-dark); font-weight: 700; margin: 0;">Aumento de ARPU</p>
+            <p style="font-size: 11px; color: var(--text-medium); margin: 4px 0 0 0;">Receita adicional com pacotes premium</p>
           </div>
         </div>
       </div>
-      
-      <div style="background: #f5f5f5; padding: 16px 18px; border-radius: 10px;">
-        <div class="row" style="gap: 12px; align-items: center;">
+
+      <div class="value-card card">
+        <div class="row gap-12" style="align-items: center;">
           <span style="font-size: 24px;">🔒</span>
           <div>
-            <p style="font-size: 13px; color: #333; font-weight: 700; margin: 0;">Redução de Churn</p>
-            <p style="font-size: 11px; color: #666; margin: 4px 0 0 0;">Benefício com alto valor percebido aumenta fidelização</p>
+            <p style="font-size: 13px; color: var(--text-dark); font-weight: 700; margin: 0;">Redução de Churn</p>
+            <p style="font-size: 11px; color: var(--text-medium); margin: 4px 0 0 0;">Benefício com alto valor percebido aumenta fidelização</p>
           </div>
         </div>
       </div>
-      
-      <div style="background: #f5f5f5; padding: 16px 18px; border-radius: 10px;">
-        <div class="row" style="gap: 12px; align-items: center;">
+
+      <div class="value-card card">
+        <div class="row gap-12" style="align-items: center;">
           <span style="font-size: 24px;">🚀</span>
           <div>
-            <p style="font-size: 13px; color: #333; font-weight: 700; margin: 0;">Posicionamento</p>
-            <p style="font-size: 11px; color: #666; margin: 4px 0 0 0;">Vivo como parceira da transformação digital do brasileiro</p>
+            <p style="font-size: 13px; color: var(--text-dark); font-weight: 700; margin: 0;">Posicionamento</p>
+            <p style="font-size: 11px; color: var(--text-medium); margin: 4px 0 0 0;">Vivo como parceira da transformação digital do brasileiro</p>
           </div>
         </div>
       </div>
-      
+
       <!-- Revenue Share -->
-      <div style="background: linear-gradient(135deg, #660099 0%, #4A0072 100%); padding: 18px; border-radius: 10px;">
+      <div class="card-primary" style="padding: 18px; border-radius: 10px;">
         <p style="font-size: 12px; color: white; font-weight: 700; margin: 0;">💡 Modelo de Receita</p>
         <p style="font-size: 11px; color: rgba(255,255,255,0.9); margin: 8px 0 0 0; line-height: 1.5;">
           Vivo subsidia o básico como benefício de fidelização. Pacotes adicionais geram <strong>receita compartilhada</strong> (revenue share) entre Vivo e Safeweb.
         </p>
       </div>
-      
+
     </div>
-    
+
   </div>
-  
+
   <!-- Footer -->
-  <div class="fit" style="padding: 10px 40px; background: #f5f5f5;">
-    <p style="font-size: 10px; color: #666; margin: 0;">
+  <div class="slide-footer fit">
+    <p style="font-size: 10px; color: var(--text-light); margin: 0;">
       Modelo SVA padrão telco • Cobrança via fatura Vivo • ISS até 5% (reduz carga ICMS telecom)
     </p>
   </div>
-  
+
 </body>
 </html>
