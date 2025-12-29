@@ -10,7 +10,7 @@ const HOST = process.env.HOST || '0.0.0.0';
 
 // Security middleware
 app.use(helmet({
-  contentSecurityPolicy: false, // Disable for inline styles in slides
+  contentSecurityPolicy: false,
   crossOriginEmbedderPolicy: false
 }));
 
@@ -69,190 +69,281 @@ app.use('/theme-safeweb.css', express.static(path.join(__dirname, 'slides', 'the
   maxAge: '1h'
 }));
 
-// Slide navigation API
-app.get('/api/slides', (req, res) => {
-  const slides = [
-    { id: 1, file: 'slide01_capa.html', title: 'Capa', category: 'Abertura' },
-    { id: 2, file: 'slide02_fraudes.html', title: 'Fraudes Digitais', category: 'Ato 1: O Problema' },
-    { id: 3, file: 'slide03_govbr_vs_icp.html', title: 'Gov.br vs ICP-Brasil', category: 'Ato 1: O Problema' },
-    { id: 4, file: 'slide04_timeline.html', title: 'Timeline Regulatório', category: 'Ato 1: O Problema' },
-    { id: 5, file: 'slide05_mercado.html', title: 'Mercado', category: 'Ato 2: A Oportunidade' },
-    { id: 6, file: 'slide06_safeweb.html', title: 'Safeweb', category: 'Ato 2: A Oportunidade' },
-    { id: 7, file: 'slide07_drivers.html', title: 'Drivers de Compra', category: 'Ato 2: A Oportunidade' },
-    { id: 8, file: 'slide08_conceito.html', title: 'Conceito SafeID', category: 'Ato 2: A Oportunidade' },
-    { id: 9, file: 'slide09_jornada_app.html', title: 'Jornada do App', category: 'Ato 2: A Oportunidade' },
-    { id: 10, file: 'slide10_diferencial.html', title: 'Diferencial Competitivo', category: 'Ato 2: A Oportunidade' },
-    { id: 11, file: 'slide11_dominancia.html', title: 'Dominância de Mercado', category: 'Ato 3: A Parceria' },
-    { id: 12, file: 'slide12_modelo_comercial.html', title: 'Modelo Comercial SVA', category: 'Ato 3: A Parceria' },
-    { id: 13, file: 'slide13_projecao_receita.html', title: 'Projeção de Receita', category: 'Ato 3: A Parceria' },
-    { id: 14, file: 'slide14_roadmap.html', title: 'Roadmap', category: 'Ato 3: A Parceria' },
-    { id: 15, file: 'slide15_cta.html', title: 'Call to Action', category: 'Fechamento' }
-  ];
-  res.json(slides);
-});
-
-// Index page - presentation viewer
+// Index page - FULLSCREEN presentation viewer
 app.get('/', (req, res) => {
-  res.send(`
-<!DOCTYPE html>
+  res.send(`<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Safeweb × Vivo - Apresentação</title>
+  <title>Safeweb × Vivo</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, #15274f 0%, #0954ce 100%);
-      min-height: 100vh;
-      color: white;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    .header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .header h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .header p {
-      font-size: 18px;
-      opacity: 0.8;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-    .card {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 30px;
-      text-decoration: none;
-      color: white;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,0.2);
-    }
-    .card h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    .card p {
-      opacity: 0.8;
-      font-size: 14px;
-    }
-    .card .icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-    .viewer-container {
-      background: white;
-      border-radius: 16px;
+
+    html, body {
+      width: 100%;
+      height: 100%;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      background: #0a0a0a;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
-    .viewer-nav {
-      background: #15274f;
-      padding: 15px 20px;
+
+    .presentation {
+      width: 100%;
+      height: 100%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: center;
+      position: relative;
     }
-    .viewer-nav button {
-      background: #0c56de;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background 0.2s;
+
+    .slide-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
     }
-    .viewer-nav button:hover {
-      background: #0954ce;
-    }
-    .viewer-nav button:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-    .viewer-nav span {
-      font-size: 14px;
-    }
+
     .slide-frame {
       width: 100%;
-      height: 540px;
+      height: 100%;
       border: none;
+      background: #fff;
     }
-    .slide-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 30px;
+
+    /* Navigation Controls */
+    .nav-controls {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(21, 39, 79, 0.95);
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
-    .slide-thumb {
+
+    .presentation:hover .nav-controls,
+    .nav-controls:hover {
+      opacity: 1;
+    }
+
+    .nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
       background: rgba(255,255,255,0.1);
-      padding: 12px;
-      border-radius: 8px;
+      color: white;
+      font-size: 18px;
       cursor: pointer;
-      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background: #0c56de;
+      transform: scale(1.1);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .slide-info {
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      min-width: 100px;
       text-align: center;
     }
-    .slide-thumb:hover, .slide-thumb.active {
-      background: rgba(255,255,255,0.25);
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: #0c56de;
+      transition: width 0.3s ease;
+      z-index: 1001;
     }
-    .slide-thumb span {
-      font-size: 12px;
-      display: block;
+
+    /* Slide thumbnails panel */
+    .thumbnails {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 80px;
+      height: 100%;
+      background: rgba(21, 39, 79, 0.98);
+      display: flex;
+      flex-direction: column;
+      padding: 12px 8px;
+      gap: 8px;
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 999;
     }
-    .slide-thumb strong {
+
+    .thumbnails:hover,
+    .thumbnails.show {
+      transform: translateX(0);
+    }
+
+    .thumb-trigger {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 60px;
+      background: rgba(21, 39, 79, 0.8);
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      z-index: 998;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 10px;
+    }
+
+    .thumb {
+      width: 64px;
+      height: 36px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
       font-size: 11px;
-      opacity: 0.7;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .thumb:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .thumb.active {
+      background: #0c56de;
+      color: white;
+    }
+
+    /* Fullscreen button */
+    .fullscreen-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(21, 39, 79, 0.9);
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .presentation:hover .fullscreen-btn {
+      opacity: 1;
+    }
+
+    .fullscreen-btn:hover {
+      background: #0c56de;
+    }
+
+    /* Demo button */
+    .demo-btn {
+      position: fixed;
+      top: 20px;
+      right: 76px;
+      height: 44px;
+      padding: 0 20px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(21, 39, 79, 0.9);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .presentation:hover .demo-btn {
+      opacity: 1;
+    }
+
+    .demo-btn:hover {
+      background: #660099;
+    }
+
+    /* Keyboard hint */
+    .keyboard-hint {
+      position: fixed;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.5);
+      font-size: 11px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .presentation:hover .keyboard-hint {
+      opacity: 1;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Safeweb × Vivo</h1>
-      <p>Certificação Digital para 33 milhões de brasileiros</p>
-    </div>
+  <div class="presentation">
+    <div class="progress-bar" id="progress"></div>
 
-    <div class="cards">
-      <a href="#presentation" class="card" onclick="showViewer()">
-        <div class="icon">📊</div>
-        <h2>Apresentação</h2>
-        <p>15 slides interativos com dados de mercado, projeções e roadmap</p>
-      </a>
-      <a href="/app" class="card">
-        <div class="icon">📱</div>
-        <h2>Demo SafeID Vivo</h2>
-        <p>Protótipo interativo do app de certificação digital</p>
-      </a>
-    </div>
+    <div class="thumb-trigger" onmouseenter="showThumbs()" onclick="toggleThumbs()">›</div>
 
-    <div id="viewer" class="viewer-container" style="display: none;">
-      <div class="viewer-nav">
-        <button onclick="prevSlide()" id="prevBtn">← Anterior</button>
-        <span id="slideInfo">Slide 1 / 15</span>
-        <button onclick="nextSlide()" id="nextBtn">Próximo →</button>
-      </div>
+    <div class="thumbnails" id="thumbnails" onmouseleave="hideThumbs()"></div>
+
+    <div class="slide-container">
       <iframe id="slideFrame" class="slide-frame" src="/slides/slide01_capa.html"></iframe>
     </div>
 
-    <div class="slide-grid" id="slideGrid"></div>
+    <a href="/app" class="demo-btn">
+      <span>📱</span> Demo App
+    </a>
+
+    <button class="fullscreen-btn" onclick="toggleFullscreen()" title="Fullscreen (F)">⛶</button>
+
+    <div class="nav-controls">
+      <button class="nav-btn" onclick="prevSlide()" id="prevBtn" title="Anterior (←)">‹</button>
+      <span class="slide-info" id="slideInfo">1 / 15</span>
+      <button class="nav-btn" onclick="nextSlide()" id="nextBtn" title="Próximo (→)">›</button>
+    </div>
+
+    <div class="keyboard-hint">Use ← → ou clique para navegar • F para fullscreen</div>
   </div>
 
   <script>
@@ -265,22 +356,13 @@ app.get('/', (req, res) => {
       'slide10_diferencial.html', 'slide11_dominancia.html', 'slide12_modelo_comercial.html',
       'slide13_projecao_receita.html', 'slide14_roadmap.html', 'slide15_cta.html'
     ];
-    const titles = [
-      'Capa', 'Fraudes', 'Gov.br vs ICP', 'Timeline', 'Mercado', 'Safeweb',
-      'Drivers', 'Conceito', 'Jornada App', 'Diferencial', 'Dominância',
-      'Modelo SVA', 'Projeção', 'Roadmap', 'CTA'
-    ];
-
-    function showViewer() {
-      document.getElementById('viewer').style.display = 'block';
-      updateSlide();
-    }
 
     function updateSlide() {
       document.getElementById('slideFrame').src = '/slides/' + slides[currentSlide - 1];
-      document.getElementById('slideInfo').textContent = 'Slide ' + currentSlide + ' / ' + totalSlides + ' - ' + titles[currentSlide - 1];
+      document.getElementById('slideInfo').textContent = currentSlide + ' / ' + totalSlides;
       document.getElementById('prevBtn').disabled = currentSlide === 1;
       document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+      document.getElementById('progress').style.width = ((currentSlide / totalSlides) * 100) + '%';
       updateThumbs();
     }
 
@@ -294,34 +376,70 @@ app.get('/', (req, res) => {
 
     function goToSlide(n) {
       currentSlide = n;
-      showViewer();
+      updateSlide();
     }
 
     function updateThumbs() {
-      document.querySelectorAll('.slide-thumb').forEach((el, i) => {
+      document.querySelectorAll('.thumb').forEach((el, i) => {
         el.classList.toggle('active', i + 1 === currentSlide);
       });
     }
 
-    // Build slide grid
-    const grid = document.getElementById('slideGrid');
-    slides.forEach((s, i) => {
+    function showThumbs() {
+      document.getElementById('thumbnails').classList.add('show');
+    }
+
+    function hideThumbs() {
+      document.getElementById('thumbnails').classList.remove('show');
+    }
+
+    function toggleThumbs() {
+      document.getElementById('thumbnails').classList.toggle('show');
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    // Build thumbnails
+    const thumbs = document.getElementById('thumbnails');
+    for (let i = 1; i <= totalSlides; i++) {
       const div = document.createElement('div');
-      div.className = 'slide-thumb';
-      div.innerHTML = '<span>' + (i + 1) + '. ' + titles[i] + '</span>';
-      div.onclick = () => goToSlide(i + 1);
-      grid.appendChild(div);
-    });
+      div.className = 'thumb' + (i === 1 ? ' active' : '');
+      div.textContent = i;
+      div.onclick = () => goToSlide(i);
+      thumbs.appendChild(div);
+    }
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+      if (e.key === 'f' || e.key === 'F') toggleFullscreen();
+      if (e.key === 'Home') { currentSlide = 1; updateSlide(); }
+      if (e.key === 'End') { currentSlide = totalSlides; updateSlide(); }
     });
+
+    // Click navigation (click right half = next, left half = prev)
+    document.querySelector('.slide-container').addEventListener('click', (e) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      if (x > rect.width / 2) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    });
+
+    // Initialize
+    updateSlide();
   </script>
 </body>
-</html>
-  `);
+</html>`);
 });
 
 // Start server

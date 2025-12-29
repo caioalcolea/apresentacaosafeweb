@@ -2,101 +2,72 @@
 <html>
 <head>
   <link rel="stylesheet" href="theme-safeweb.css">
-  <style>
-    .chart-bar {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-    .bar {
-      width: 55px;
-      background: linear-gradient(180deg, var(--safeweb-primary) 0%, var(--safeweb-dark-blue) 100%);
-      border-radius: 4px 4px 0 0;
-    }
-    .bar.highlight {
-      background: linear-gradient(180deg, #10b981 0%, #059669 100%);
-    }
-    .growth-line {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 2px;
-      background: #ef4444;
-      transform: translateX(-50%);
-    }
-  </style>
 </head>
-<body class="slide col" style="background: var(--safeweb-white);">
+<body class="slide col">
 
   <!-- Header -->
   <div class="slide-header fit">
     <div class="row" style="justify-content: space-between; align-items: flex-start;">
       <div>
         <p class="slide-category">OPORTUNIDADE DE MERCADO</p>
-        <h1 class="slide-title">O Mercado Vai Explodir</h1>
+        <h1 class="slide-title">Crescimento Exponencial</h1>
       </div>
       <img src="assets/safeweb-logo.png" alt="Safeweb" class="logo-safeweb small">
     </div>
   </div>
 
   <!-- Content -->
-  <div class="slide-content fill row gap-24">
+  <div class="slide-content fill row" style="gap: 3vw;">
 
     <!-- Left - Chart -->
-    <div class="col" style="flex: 1.2; gap: 16px;">
+    <div class="col" style="flex: 1.3; gap: 2vh;">
 
-      <!-- Bar Chart -->
-      <div class="card" style="padding: 18px;">
-        <p style="font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 16px 0;">
-          Certificados Totais (Milhões) • <span style="color: var(--safeweb-primary); font-weight: 600;">CAGR 27%</span>
-        </p>
+      <!-- Main Chart -->
+      <div class="card fill" style="padding: 2vh 2vw;">
+        <div class="row" style="justify-content: space-between; align-items: center; margin-bottom: 2vh;">
+          <p class="text-xs text-light" style="text-transform: uppercase; letter-spacing: 1px;">Certificados Digitais (Milhões)</p>
+          <span class="badge badge-primary">CAGR 27%</span>
+        </div>
 
-        <div class="row" style="gap: 16px; align-items: flex-end; height: 170px; justify-content: center;">
-
-          <div class="chart-bar">
-            <span style="font-size: 13px; font-weight: 700; color: var(--safeweb-primary);">12.1M</span>
-            <div class="bar" style="height: 55px;"></div>
-            <span style="font-size: 10px; color: var(--text-light);">2025</span>
+        <div class="bar-chart" style="height: calc(100% - 6vh);">
+          <div class="bar-item">
+            <span class="bar-value">12.1</span>
+            <div class="bar" style="height: 30%;"></div>
+            <span class="bar-label">2025</span>
           </div>
-
-          <div class="chart-bar">
-            <span style="font-size: 13px; font-weight: 700; color: var(--safeweb-primary);">19.0M</span>
-            <div class="bar" style="height: 85px;"></div>
-            <span style="font-size: 10px; color: var(--text-light);">2026</span>
+          <div class="bar-item">
+            <span class="bar-value">19.0</span>
+            <div class="bar" style="height: 47%;"></div>
+            <span class="bar-label">2026</span>
           </div>
-
-          <div class="chart-bar">
-            <span style="font-size: 13px; font-weight: 700; color: var(--safeweb-primary);">26.1M</span>
-            <div class="bar" style="height: 115px;"></div>
-            <span style="font-size: 10px; color: var(--text-light);">2027</span>
+          <div class="bar-item">
+            <span class="bar-value">26.1</span>
+            <div class="bar" style="height: 64%;"></div>
+            <span class="bar-label">2027</span>
           </div>
-
-          <div class="chart-bar">
-            <span style="font-size: 13px; font-weight: 700; color: var(--safeweb-primary);">33.6M</span>
-            <div class="bar" style="height: 145px;"></div>
-            <span style="font-size: 10px; color: var(--text-light);">2028</span>
+          <div class="bar-item">
+            <span class="bar-value">33.6</span>
+            <div class="bar" style="height: 82%;"></div>
+            <span class="bar-label">2028</span>
           </div>
-
-          <div class="chart-bar">
-            <span style="font-size: 14px; font-weight: 700; color: #10b981;">40.8M</span>
-            <div class="bar highlight" style="height: 170px;"></div>
-            <span style="font-size: 10px; color: var(--text-light);">2029</span>
+          <div class="bar-item">
+            <span class="bar-value text-success font-bold">40.8</span>
+            <div class="bar highlight" style="height: 100%;"></div>
+            <span class="bar-label font-semibold">2029</span>
           </div>
-
         </div>
       </div>
 
-      <!-- Transaction Growth -->
-      <div class="card" style="padding: 14px 18px; background: linear-gradient(135deg, rgba(12, 86, 222, 0.05) 0%, rgba(9, 84, 206, 0.1) 100%); border: 1px solid rgba(12, 86, 222, 0.2);">
+      <!-- Transaction stat -->
+      <div class="highlight-box">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
-            <p style="font-size: 12px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">Transações Projetadas 2029</p>
-            <p style="font-size: 10px; color: var(--text-light); margin: 3px 0 0 0;">~2 transações por certificado por dia</p>
+            <p class="text-sm font-semibold text-primary">Transações Projetadas 2029</p>
+            <p class="text-xs text-light">~2 transações/certificado/dia</p>
           </div>
           <div style="text-align: right;">
-            <p style="font-size: 26px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">29 bi</p>
-            <p style="font-size: 10px; color: var(--text-light); margin: 0;">CAGR 39%</p>
+            <p class="text-2xl font-bold text-primary">29 bi</p>
+            <p class="text-xs text-light">CAGR 39%</p>
           </div>
         </div>
       </div>
@@ -104,55 +75,49 @@
     </div>
 
     <!-- Right - Key Stats -->
-    <div class="col" style="flex: 1; gap: 12px;">
+    <div class="col" style="flex: 0.9; gap: 1.5vh;">
 
-      <p style="font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin: 0;">
-        Indicadores-Chave
-      </p>
+      <p class="text-xs text-light" style="text-transform: uppercase; letter-spacing: 1px;">Indicadores-Chave</p>
 
-      <div class="card card-dark" style="padding: 16px 18px;">
-        <p style="font-size: 10px; color: rgba(255,255,255,0.6); margin: 0;">Crescimento 2025 → 2029</p>
-        <p style="font-size: 32px; color: #10b981; font-weight: 700; margin: 4px 0 0 0;">+237%</p>
-        <p style="font-size: 10px; color: rgba(255,255,255,0.6); margin: 4px 0 0 0;">12,1M → 40,8M certificados</p>
+      <div class="card card-dark" style="padding: 2vh 2vw; text-align: center;">
+        <p class="text-xs" style="color: rgba(255,255,255,0.6);">Crescimento 2025 → 2029</p>
+        <p class="text-2xl font-bold text-success" style="margin: 1vh 0;">+237%</p>
+        <p class="text-xs" style="color: rgba(255,255,255,0.6);">12,1M → 40,8M certificados</p>
       </div>
 
-      <div class="card" style="padding: 14px 16px;">
+      <div class="card" style="padding: 2vh 2vw;">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
-            <p style="font-size: 12px; color: var(--text-dark); font-weight: 600; margin: 0;">Certificados Ativos Hoje</p>
-            <p style="font-size: 9px; color: var(--text-light); margin: 2px 0 0 0;">ITI/ANCD 2025</p>
+            <p class="text-sm font-semibold">Certificados Ativos</p>
+            <p class="text-xs text-light">ITI/ANCD 2025</p>
           </div>
-          <p style="font-size: 20px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">15,2M</p>
+          <p class="text-xl font-bold text-primary">15,2M</p>
         </div>
       </div>
 
-      <div class="card" style="padding: 14px 16px;">
+      <div class="card" style="padding: 2vh 2vw;">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
-            <p style="font-size: 12px; color: var(--text-dark); font-weight: 600; margin: 0;">Pessoas Físicas (target B2C)</p>
-            <p style="font-size: 9px; color: var(--text-light); margin: 2px 0 0 0;">49% do total ativo</p>
+            <p class="text-sm font-semibold">Pessoas Físicas</p>
+            <p class="text-xs text-light">Target B2C • 49%</p>
           </div>
-          <p style="font-size: 20px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">7,5M</p>
+          <p class="text-xl font-bold text-primary">7,5M</p>
         </div>
       </div>
 
-      <div class="card" style="padding: 14px 16px;">
+      <div class="card" style="padding: 2vh 2vw;">
         <div class="row" style="justify-content: space-between; align-items: center;">
           <div>
-            <p style="font-size: 12px; color: var(--text-dark); font-weight: 600; margin: 0;">Mercado Global 2026</p>
-            <p style="font-size: 9px; color: var(--text-light); margin: 2px 0 0 0;">Projeção internacional</p>
+            <p class="text-sm font-semibold">Mercado Global</p>
+            <p class="text-xs text-light">Projeção 2026</p>
           </div>
-          <p style="font-size: 20px; color: var(--safeweb-primary); font-weight: 700; margin: 0;">US$ 20bi</p>
+          <p class="text-xl font-bold text-primary">US$ 20bi</p>
         </div>
       </div>
 
-      <div class="card card-primary" style="padding: 14px 16px;">
-        <p style="font-size: 11px; color: white; font-weight: 600; margin: 0;">
-          💡 AR Eletrônica = Chance de Ouro
-        </p>
-        <p style="font-size: 10px; color: rgba(255,255,255,0.85); margin: 5px 0 0 0;">
-          Momento de transformação para ampliar adoção de certificados ICP-Brasil
-        </p>
+      <div class="card card-primary fill" style="justify-content: center;">
+        <p class="text-sm font-semibold text-white">💡 AR Eletrônica = Oportunidade</p>
+        <p class="text-xs" style="color: rgba(255,255,255,0.85); margin-top: 0.5vh;">Transformação para ampliar adoção</p>
       </div>
 
     </div>
@@ -161,9 +126,7 @@
 
   <!-- Footer -->
   <div class="slide-footer fit">
-    <p style="font-size: 10px; color: var(--text-light); margin: 0;">
-      Fonte: Projeções ANCD/Safeweb • CAGR Certificados: 27% • CAGR Transações: 39%
-    </p>
+    <p>Fonte: Projeções ANCD/Safeweb • CAGR Certificados: 27% • CAGR Transações: 39%</p>
   </div>
 
 </body>

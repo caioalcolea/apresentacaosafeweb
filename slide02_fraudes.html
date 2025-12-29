@@ -2,202 +2,110 @@
 <html>
 <head>
   <link rel="stylesheet" href="theme-safeweb.css">
-  <style>
-    .bar-chart {
-      display: flex;
-      align-items: flex-end;
-      gap: 20px;
-      height: 140px;
-      padding: 0 10px;
-    }
-    .bar-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-    .bar {
-      width: 50px;
-      background: linear-gradient(180deg, var(--safeweb-primary) 0%, var(--safeweb-dark-blue) 100%);
-      border-radius: 4px 4px 0 0;
-      transition: all 0.3s ease;
-    }
-    .bar.highlight {
-      background: linear-gradient(180deg, #ef4444 0%, #b91c1c 100%);
-    }
-    .bar-label {
-      font-size: 10px;
-      color: var(--text-medium);
-      text-align: center;
-    }
-    .bar-value {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-dark);
-    }
-    .stat-ring {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: conic-gradient(#ef4444 0deg 130deg, #e2e8f0 130deg 360deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .stat-ring-inner {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-  </style>
 </head>
-<body class="slide col" style="background: var(--safeweb-white);">
+<body class="slide col">
 
   <!-- Header -->
   <div class="slide-header fit">
     <div class="row" style="justify-content: space-between; align-items: flex-start;">
       <div>
         <p class="slide-category" style="color: #ef4444;">⚠️ CONTEXTO DE URGÊNCIA</p>
-        <h1 class="slide-title">O Brasil Está Sob Ataque Digital</h1>
+        <h1 class="slide-title">Brasil Sob Ataque Digital</h1>
       </div>
       <img src="assets/safeweb-logo.png" alt="Safeweb" class="logo-safeweb small">
     </div>
   </div>
 
   <!-- Content -->
-  <div class="slide-content fill row gap-24">
+  <div class="slide-content fill row" style="gap: 3vw;">
 
-    <!-- Left Column - Main Stat + Chart -->
-    <div class="col" style="flex: 1; gap: 16px;">
+    <!-- Left - Main Stats & Chart -->
+    <div class="col" style="flex: 1.2; gap: 2vh;">
 
-      <!-- Main Stat Card -->
-      <div class="card" style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border: 1px solid #fecaca;">
-        <p style="font-size: 11px; color: #b91c1c; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px 0;">
-          Prejuízo Total 2024
-        </p>
-        <p style="font-size: 42px; color: #b91c1c; font-weight: 700; margin: 0; line-height: 1;">
-          R$ 10,1 bi
-        </p>
-        <p style="font-size: 12px; color: #991b1b; margin: 8px 0 0 0;">
-          +17% vs 2023 • Fonte: FEBRABAN
-        </p>
+      <!-- Big Number -->
+      <div class="card" style="background: linear-gradient(135deg, #fef2f2, #fee2e2); border-color: #fecaca; text-align: center; padding: 3vh 2vw;">
+        <p class="text-xs font-semibold" style="color: #b91c1c; text-transform: uppercase; letter-spacing: 1px;">Prejuízo Total 2024</p>
+        <p class="text-3xl font-bold" style="color: #b91c1c; margin: 1vh 0;">R$ 10,1 bi</p>
+        <p class="text-sm" style="color: #991b1b;">+17% vs 2023 • Fonte: FEBRABAN</p>
       </div>
 
-      <!-- Bar Chart - Fraud Growth -->
-      <div class="card" style="padding: 16px;">
-        <p style="font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 12px 0;">
-          Evolução das Fraudes Digitais (R$ bi)
-        </p>
-        <div class="bar-chart">
+      <!-- Chart -->
+      <div class="card fill" style="padding: 2vh 2vw;">
+        <p class="text-xs text-light" style="text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2vh;">Evolução das Fraudes (R$ bilhões)</p>
+        <div class="bar-chart" style="height: calc(100% - 4vh);">
           <div class="bar-item">
             <span class="bar-value">5.8</span>
-            <div class="bar" style="height: 58px;"></div>
+            <div class="bar" style="height: 35%;"></div>
             <span class="bar-label">2021</span>
           </div>
           <div class="bar-item">
             <span class="bar-value">7.2</span>
-            <div class="bar" style="height: 72px;"></div>
+            <div class="bar" style="height: 45%;"></div>
             <span class="bar-label">2022</span>
           </div>
           <div class="bar-item">
             <span class="bar-value">8.6</span>
-            <div class="bar" style="height: 86px;"></div>
+            <div class="bar" style="height: 55%;"></div>
             <span class="bar-label">2023</span>
           </div>
           <div class="bar-item">
-            <span class="bar-value">10.1</span>
-            <div class="bar highlight" style="height: 101px;"></div>
+            <span class="bar-value text-danger">10.1</span>
+            <div class="bar danger" style="height: 65%;"></div>
             <span class="bar-label">2024</span>
           </div>
         </div>
       </div>
 
-      <!-- Stats Row -->
-      <div class="row gap-12">
-        <div class="card" style="flex: 1; padding: 14px; border-left: 4px solid #ef4444;">
-          <p style="font-size: 24px; color: #ef4444; font-weight: 700; margin: 0;">+43%</p>
-          <p style="font-size: 10px; color: var(--text-medium); margin: 4px 0 0 0;">Fraudes PIX (YoY)</p>
-        </div>
-        <div class="card" style="flex: 1; padding: 14px; border-left: 4px solid #ef4444;">
-          <p style="font-size: 24px; color: #ef4444; font-weight: 700; margin: 0;">+233%</p>
-          <p style="font-size: 10px; color: var(--text-medium); margin: 4px 0 0 0;">Crimes Cibernéticos</p>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Right Column - Vulnerabilities -->
-    <div class="col" style="flex: 1; gap: 12px;">
+    <!-- Right - Stats -->
+    <div class="col" style="flex: 1; gap: 1.5vh;">
 
-      <p style="font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin: 0;">
-        Principais Vulnerabilidades
-      </p>
+      <p class="text-xs text-light" style="text-transform: uppercase; letter-spacing: 1px;">Principais Vulnerabilidades</p>
 
-      <div class="card" style="padding: 14px 18px;">
+      <div class="card" style="padding: 2vh 2vw;">
         <div class="row" style="justify-content: space-between; align-items: center;">
-          <div class="row gap-12" style="align-items: center;">
+          <div class="row" style="align-items: center; gap: 1.5vw;">
             <div class="icon-circle" style="background: #fef2f2; color: #ef4444;">🎭</div>
             <div>
-              <p style="font-size: 14px; color: var(--text-dark); font-weight: 600; margin: 0;">Fraude de Identidade</p>
-              <p style="font-size: 10px; color: var(--text-light); margin: 3px 0 0 0;">Assinaturas falsificadas, documentos contestados</p>
+              <p class="text-base font-semibold">Fraude de Identidade</p>
+              <p class="text-xs text-light">Assinaturas falsificadas</p>
             </div>
           </div>
           <span class="badge badge-danger">+67%</span>
         </div>
       </div>
 
-      <div class="card" style="padding: 14px 18px;">
+      <div class="card" style="padding: 2vh 2vw;">
         <div class="row" style="justify-content: space-between; align-items: center;">
-          <div class="row gap-12" style="align-items: center;">
+          <div class="row" style="align-items: center; gap: 1.5vw;">
             <div class="icon-circle" style="background: #fef2f2; color: #ef4444;">🎣</div>
             <div>
-              <p style="font-size: 14px; color: var(--text-dark); font-weight: 600; margin: 0;">Phishing & Malware</p>
-              <p style="font-size: 10px; color: var(--text-light); margin: 3px 0 0 0;">Roubo de credenciais, invasão de contas</p>
+              <p class="text-base font-semibold">Phishing & Malware</p>
+              <p class="text-xs text-light">Roubo de credenciais</p>
             </div>
           </div>
           <span class="badge badge-danger">+52%</span>
         </div>
       </div>
 
-      <div class="card" style="padding: 14px 18px;">
+      <div class="card" style="padding: 2vh 2vw;">
         <div class="row" style="justify-content: space-between; align-items: center;">
-          <div class="row gap-12" style="align-items: center;">
+          <div class="row" style="align-items: center; gap: 1.5vw;">
             <div class="icon-circle" style="background: #fef2f2; color: #ef4444;">💾</div>
             <div>
-              <p style="font-size: 14px; color: var(--text-dark); font-weight: 600; margin: 0;">Roubo de Dados</p>
-              <p style="font-size: 10px; color: var(--text-light); margin: 3px 0 0 0;">Vazamentos LGPD, exposição de informações</p>
+              <p class="text-base font-semibold">Vazamento de Dados</p>
+              <p class="text-xs text-light">Exposição LGPD</p>
             </div>
           </div>
           <span class="badge badge-danger">+38%</span>
         </div>
       </div>
 
-      <!-- Ring Stat -->
-      <div class="row" style="align-items: center; justify-content: center; margin-top: 4px;">
-        <div class="stat-ring">
-          <div class="stat-ring-inner">
-            <span style="font-size: 20px; font-weight: 700; color: #ef4444;">36%</span>
-          </div>
-        </div>
-        <p style="font-size: 12px; color: var(--text-medium); margin-left: 16px; max-width: 150px;">
-          dos brasileiros já foram vítimas de fraude digital
-        </p>
-      </div>
-
-      <!-- Solution Hint -->
-      <div class="card card-primary" style="padding: 14px 18px; margin-top: auto;">
-        <p style="font-size: 12px; color: white; font-weight: 600; margin: 0;">
-          💡 Certificado ICP-Brasil = Não-Repúdio
-        </p>
-        <p style="font-size: 10px; color: rgba(255,255,255,0.85); margin: 4px 0 0 0;">
-          Impossível contestar. Impossível falsificar. Presunção legal de veracidade.
-        </p>
+      <!-- Solution -->
+      <div class="card card-primary fill" style="justify-content: center;">
+        <p class="text-base font-semibold text-white">💡 Certificado ICP-Brasil = Não-Repúdio</p>
+        <p class="text-sm" style="color: rgba(255,255,255,0.85); margin-top: 1vh;">Impossível contestar. Presunção legal de veracidade.</p>
       </div>
 
     </div>
@@ -206,9 +114,7 @@
 
   <!-- Footer -->
   <div class="slide-footer fit">
-    <p style="font-size: 10px; color: var(--text-light); margin: 0;">
-      Fonte: FEBRABAN (2024), Polícia Federal, MJSP • Dados oficiais consolidados
-    </p>
+    <p>Fonte: FEBRABAN 2024, Polícia Federal, MJSP</p>
   </div>
 
 </body>
